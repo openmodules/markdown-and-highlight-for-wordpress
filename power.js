@@ -161,6 +161,9 @@
 		 	var _this = this;
 		 	$('pre code').each(function() {
 		 		var lang = $(this).attr('class');
+				if (!lang) {
+					lang = "c";
+				}
 		 		if (lang) {
 		 			var code = $(this).html();
 		 			$(this).parent().attr('class', 'prettyprint linenums lang-' + lang).html(code)
